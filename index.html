@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contador Dias - Junior & Debora</title>
+	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="css/theme.css">
+</head>
+<body>
+	<div class="bg">
+	</div>
+
+	<div class="caption">
+		<span class="border">HOJE FAZ <i id="days"></i> DIAS</span>
+		<div class="text">
+			<p>
+				"Diante da vastidão do tempo e da imensidão do universo, é um imenso prazer para mim dividir um planeta e uma época com você." - Carl Sagan
+			<p>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="semantic/dist/semantic.js"></script>
+	<script type="text/javascript">
+		var oneDay = 24 * 60 * 60 * 1000;
+		var start = new Date(2010, 07, 19);
+		var today = new Date();
+
+		var diffDays = Math.round(
+			Math.abs(
+				(start.getTime() - today.getTime()) / (oneDay)
+			)
+		);
+
+		$('#days').html(diffDays);
+	</script>
+</body>
+</html>
